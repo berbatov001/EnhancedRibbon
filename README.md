@@ -6,12 +6,7 @@ EnhancedRibbon继承了原生的Netflix Ribbon实现本地负载均衡，同时�
 
 ## 2. 如何使用
 ### 2.1在你的Springboot工程中引入依赖
-<dependency>  
-    <groupId>com.github.berbatov001</groupId>  
-    <artifactId>enhanced-ribbon</artifactId>  
-    <version>1.0-SNAPSHOT</version>  
-</dependency> 
-
+范德萨
 
 ### 2.2在application.properties文件中添加Nacos配置中心
 nacos.discovery.serverAddr=(具体的Nacos集群地址)
