@@ -16,7 +16,9 @@ EnhancedRibbon继承了原生的Netflix Ribbon实现本地负载均衡，同时�
 ```
 
 ### 2.2在application.properties文件中添加Nacos配置中心
+```
 nacos.discovery.serverAddr=(具体的Nacos集群地址)
+```
 
 ### 2.3使用RemoteClient完成服务之间的调用
 ```
