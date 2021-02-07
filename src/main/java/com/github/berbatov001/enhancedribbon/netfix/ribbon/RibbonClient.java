@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.netfix.ribbon;
+package com.github.berbatov001.enhancedribbon.netfix.ribbon;
 
 import com.netflix.loadbalancer.*;
 import org.slf4j.Logger;

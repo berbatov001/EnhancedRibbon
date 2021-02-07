@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.nacos;
+package com.github.berbatov001.enhancedribbon.nacos;
 
 public class NacosDiscoveryPropertiesHolder {
     private static NacosDiscoveryProperties STORES;

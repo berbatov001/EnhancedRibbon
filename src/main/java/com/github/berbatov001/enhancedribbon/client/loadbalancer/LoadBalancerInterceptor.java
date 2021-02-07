@@ -1,7 +1,7 @@
-package com.github.berbatov001.envolvedribbon.client.loadbalancer;
+package com.github.berbatov001.enhancedribbon.client.loadbalancer;
 
-import com.github.berbatov001.envolvedribbon.netfix.ribbon.RibbonClient;
-import com.github.berbatov001.envolvedribbon.netfix.ribbon.RibbonClientFactory;
+import com.github.berbatov001.enhancedribbon.netfix.ribbon.RibbonClient;
+import com.github.berbatov001.enhancedribbon.netfix.ribbon.RibbonClientFactory;
 import com.netflix.loadbalancer.LoadBalancerContext;
 import com.netflix.loadbalancer.Server;
 import org.slf4j.Logger;

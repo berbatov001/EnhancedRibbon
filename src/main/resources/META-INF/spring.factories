@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.berbatov001.envolvedribbon.autoconfigure.RemoteClientAutoConfiguration
+com.github.berbatov001.enhancedribbon.autoconfigure.RemoteClientAutoConfiguration

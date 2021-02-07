@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.nacos;
+package com.github.berbatov001.enhancedribbon.nacos;
 
 import com.alibaba.nacos.api.naming.NamingFactory;
 import com.alibaba.nacos.api.naming.NamingService;

@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.util;
+package com.github.berbatov001.enhancedribbon.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.netfix.ribbon;
+package com.github.berbatov001.enhancedribbon.netfix.ribbon;
 
 import com.alibaba.nacos.api.naming.pojo.Instance;
 import com.netflix.loadbalancer.Server;

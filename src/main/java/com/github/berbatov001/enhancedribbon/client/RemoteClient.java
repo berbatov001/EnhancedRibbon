@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.client;
+package com.github.berbatov001.enhancedribbon.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.Assert;
-import org.springframework.util.ReflectionUtils;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;

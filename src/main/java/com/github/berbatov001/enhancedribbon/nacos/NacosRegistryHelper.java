@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.nacos;
+package com.github.berbatov001.enhancedribbon.nacos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.context.WebServerInitializedEvent;

@@ -1,9 +1,8 @@
-package com.github.berbatov001.envolvedribbon.client.loadbalancer;
+package com.github.berbatov001.enhancedribbon.client.loadbalancer;
 
 import com.netflix.loadbalancer.LoadBalancerContext;
 import com.netflix.loadbalancer.Server;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpRequest;
 import org.springframework.util.Assert;
 

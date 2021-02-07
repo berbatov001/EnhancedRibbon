@@ -1,8 +1,8 @@
-package com.github.berbatov001.envolvedribbon.netfix.ribbon;
+package com.github.berbatov001.enhancedribbon.netfix.ribbon;
 
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.api.naming.pojo.Instance;
-import com.github.berbatov001.envolvedribbon.nacos.NacosDiscoveryProperties;
+import com.github.berbatov001.enhancedribbon.nacos.NacosDiscoveryProperties;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractServerList;
 

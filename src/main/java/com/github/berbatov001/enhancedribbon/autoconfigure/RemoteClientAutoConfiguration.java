@@ -1,14 +1,14 @@
-package com.github.berbatov001.envolvedribbon.autoconfigure;
+package com.github.berbatov001.enhancedribbon.autoconfigure;
 
-import com.github.berbatov001.envolvedribbon.client.RemoteClient;
-import com.github.berbatov001.envolvedribbon.client.loadbalancer.LoadBalancerInterceptor;
-import com.github.berbatov001.envolvedribbon.client.support.CustomizeClientHttpRequestFactory;
-import com.github.berbatov001.envolvedribbon.client.support.RestTemplateConnectionProperties;
-import com.github.berbatov001.envolvedribbon.nacos.NacosDiscoveryProperties;
-import com.github.berbatov001.envolvedribbon.nacos.NacosRegistryHelper;
-import com.github.berbatov001.envolvedribbon.nacos.NacosServiceRegistry;
-import com.github.berbatov001.envolvedribbon.netfix.ribbon.support.RibbonProperties;
-import com.github.berbatov001.envolvedribbon.util.ApplicationContextHolder;
+import com.github.berbatov001.enhancedribbon.client.RemoteClient;
+import com.github.berbatov001.enhancedribbon.client.loadbalancer.LoadBalancerInterceptor;
+import com.github.berbatov001.enhancedribbon.client.support.CustomizeClientHttpRequestFactory;
+import com.github.berbatov001.enhancedribbon.client.support.RestTemplateConnectionProperties;
+import com.github.berbatov001.enhancedribbon.nacos.NacosDiscoveryProperties;
+import com.github.berbatov001.enhancedribbon.nacos.NacosRegistryHelper;
+import com.github.berbatov001.enhancedribbon.nacos.NacosServiceRegistry;
+import com.github.berbatov001.enhancedribbon.netfix.ribbon.support.RibbonProperties;
+import com.github.berbatov001.enhancedribbon.util.ApplicationContextHolder;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

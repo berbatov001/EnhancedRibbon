@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.client.support;
+package com.github.berbatov001.enhancedribbon.client.support;
 
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.lang.NonNull;

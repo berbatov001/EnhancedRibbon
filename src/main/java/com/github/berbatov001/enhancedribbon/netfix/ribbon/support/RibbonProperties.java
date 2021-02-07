@@ -1,4 +1,4 @@
-package com.github.berbatov001.envolvedribbon.netfix.ribbon.support;
+package com.github.berbatov001.enhancedribbon.netfix.ribbon.support;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -1,6 +1,6 @@
-package com.github.berbatov001.envolvedribbon.netfix.ribbon.predicate;
+package com.github.berbatov001.enhancedribbon.netfix.ribbon.predicate;
 
-import com.github.berbatov001.envolvedribbon.netfix.ribbon.NacosServer;
+import com.github.berbatov001.enhancedribbon.netfix.ribbon.NacosServer;
 import com.netflix.loadbalancer.AbstractServerPredicate;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.PredicateKey;

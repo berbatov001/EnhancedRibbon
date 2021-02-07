@@ -1,16 +1,15 @@
-package com.github.berbatov001.envolvedribbon.netfix.ribbon;
+package com.github.berbatov001.enhancedribbon.netfix.ribbon;
 
-import com.github.berbatov001.envolvedribbon.nacos.NacosDiscoveryProperties;
-import com.github.berbatov001.envolvedribbon.nacos.NacosDiscoveryPropertiesHolder;
-import com.github.berbatov001.envolvedribbon.netfix.ribbon.rule.SdkZoneAvoidanceRule;
-import com.github.berbatov001.envolvedribbon.netfix.ribbon.support.RibbonProperties;
-import com.github.berbatov001.envolvedribbon.util.ApplicationContextHolder;
+import com.github.berbatov001.enhancedribbon.nacos.NacosDiscoveryProperties;
+import com.github.berbatov001.enhancedribbon.nacos.NacosDiscoveryPropertiesHolder;
+import com.github.berbatov001.enhancedribbon.netfix.ribbon.rule.SdkZoneAvoidanceRule;
+import com.github.berbatov001.enhancedribbon.netfix.ribbon.support.RibbonProperties;
+import com.github.berbatov001.enhancedribbon.util.ApplicationContextHolder;
 import com.netflix.client.ClientException;
 import com.netflix.client.config.ClientConfigFactory;
 import com.netflix.client.config.CommonClientConfigKey;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.*;
-import org.springframework.util.StringUtils;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -49,7 +48,7 @@ public class RibbonClientFactory {
         return new ZoneAwareLoadBalancer<>(config, rule, ping, serverList, serverListFilter, serverListUpdater);
     }
 
-    private static IClientConfig getNamedConfig(String serviceName) {
+    public static IClientConfig getNamedConfig(String serviceName) {
         return namedConfig.computeIfAbsent(serviceName, ignore -> {
             RibbonProperties ribbonProperties = ApplicationContextHolder.getApplicationContext().getBean(RibbonProperties.class);
             IClientConfig config = ClientConfigFactory.DEFAULT.newConfig();

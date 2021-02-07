@@ -1,6 +1,6 @@
-package com.github.berbatov001.envolvedribbon.netfix.ribbon.rule;
+package com.github.berbatov001.enhancedribbon.netfix.ribbon.rule;
 
-import com.github.berbatov001.envolvedribbon.netfix.ribbon.predicate.SdkGrayEnabledPredicate;
+import com.github.berbatov001.enhancedribbon.netfix.ribbon.predicate.SdkGrayEnabledPredicate;
 import com.netflix.loadbalancer.*;
 
 public class SdkZoneAvoidanceRule extends ZoneAvoidanceRule {
