@@ -24,19 +24,41 @@ public class RemoteClient {
         this.restTemplate = restTemplate;
     }
 
+    /**
+     * 没有参数，直接访问。
+     *
+     * @param serviceName 目标服务名
+     * @param path 目标接口
+     * @param method HTTP方法名，GET POST PUT DELETE等
+     * @param responseType 返回值类型
+     * @param <T> 指定返回值类型
+     * @return 通过该方法参数responseType的反省指定的是什么类型，这里就返回什么类型。
+     */
     public <T> T call(String serviceName, String path, HttpMethod method, Class<T> responseType) {
         return call(serviceName, path, method, responseType, null);
     }
 
-    public <T> T call(String serviceName, String path, HttpMethod method, Class<T> responseType, String json) {
-        return call(serviceName, path, method, responseType, json, new HttpHeaders());
+    public <T> T call(String serviceName, String path, HttpMethod method, Class<T> responseType, String body) {
+        return call(serviceName, path, method, responseType, body, new HttpHeaders());
     }
 
-    public <T> T call(String serviceName, String path, HttpMethod method, Class<T> responseType, String json, HttpHeaders headers) {
+    /**
+     * 用于访问请求体是String类型的接口
+     *
+     * @param serviceName 目标服务名
+     * @param path  目标接口
+     * @param method  HTTP方法名，GET POST PUT DELETE等
+     * @param responseType  返回值类型
+     * @param body  请求体
+     * @param headers  请求header
+     * @param <T>  指定返回值类型
+     * @return  通过该方法参数responseType的反省指定的是什么类型，这里就返回什么类型。
+     */
+    public <T> T call(String serviceName, String path, HttpMethod method, Class<T> responseType, String body, HttpHeaders headers) {
         validateParameters(serviceName, path, method, responseType);
         path = path.startsWith("/") ? path : "/" + path;
         String url = PROTOCOL_PREFIX + serviceName + path;
-        HttpEntity<Object> requestEntity = new HttpEntity<>(json, headers);
+        HttpEntity<Object> requestEntity = new HttpEntity<>(body, headers);
         try {
             ResponseEntity<T> response = restTemplate.exchange(url, method, requestEntity, responseType);
             return response.getBody();
@@ -46,6 +68,19 @@ public class RemoteClient {
         }
     }
 
+    /**
+     * 最通用的方法。可以自定义请求体，自定义请求头。
+     *
+     * @param serviceName 目标服务名
+     * @param path 目标接口
+     * @param method HTTP方法名，GET POST PUT DELETE等
+     * @param headers 自定义请求头
+     * @param body  自定义请求头
+     * @param returnType  返回值类型
+     * @param <T>  定义请求体类型
+     * @param <R>  定义返回值类型
+     * @return  返回值
+     */
     public <T, R> ResponseEntity<R> callForResponseEntity(String serviceName, String path, HttpMethod method, HttpHeaders headers, T body, Class<R> returnType) {
         path = path.startsWith("/") ? path : "/" + path;
         String url = PROTOCOL_PREFIX + serviceName + path;
