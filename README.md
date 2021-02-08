@@ -17,17 +17,19 @@ EnhancedRibbon继承了原生的Netflix Ribbon实现本地负载均衡，同时�
 
 ### 2.2在application.properties文件中添加Nacos配置中心
 ```
+# 默认以工程名作为注册在Nacos上的服务名
+spring.appllication.name=(工程名)
 nacos.discovery.serverAddr=(具体的Nacos集群地址)
 ```
 
 ### 2.3使用RemoteClient完成服务之间的调用
-```
+``` java
 @Autowired  
 private RemoteClient remoteClient;
 ```
 
 RemoteClient提供了多个call方法，用于不同的场景
-```
+``` java
 /**
  * 没有参数，直接访问。
  * @param serviceName 目标服务名
@@ -39,7 +41,7 @@ RemoteClient提供了多个call方法，用于不同的场景
  */
 public <T> T call(String serviceName, String path, HttpMethod method, Class<T> responseType) 
 ```
-```
+``` java
 /**
  * 用于访问请求体是String类型的接口
  *
@@ -60,7 +62,7 @@ public <T> T call(String serviceName, String path, HttpMethod method, Class<T> r
  headers.add("content-type","application/json");
  String result = remoteClient.call("/serviceA", "/test", HttpMethod.POST, String.class, json, headers);
 ```
-```
+``` java
 /**
  * 最通用的方法。可以自定义请求体，自定义请求头。
  *
