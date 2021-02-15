@@ -4,4 +4,4 @@ EnhancedRibbon是一款轻量级的微服务SDK，它将原生的Netfix Ribbon�
 
 EnhancedRibbon必须使用在Springboot 2.x版本的架构上。
 
-详细设计和部署文档，请参考 [`WIKI`](https://github.com/berbatov001/EnhancedRibbon/wiki)
+详细设计和部署文档，请参考 [`WiKi`](https://github.com/berbatov001/EnhancedRibbon/wiki)
