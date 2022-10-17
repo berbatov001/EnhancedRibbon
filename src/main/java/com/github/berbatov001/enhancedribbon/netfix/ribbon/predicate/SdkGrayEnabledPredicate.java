@@ -38,19 +38,30 @@ public class SdkGrayEnabledPredicate extends AbstractServerPredicate {
             return true;
         }
         HttpServletRequest request = servletRequestAttributes.getRequest();
+        NacosServer nacosServer = (NacosServer) server;
+        Map<String, String> metaMap = nacosServer.getMetadata();
         if ("true".equals(request.getHeader("grepEnable"))) {
-            NacosServer nacosServer = (NacosServer) server;
-            String serviceName = nacosServer.getInstance().getServiceName();
-            Map<String, String> metadata = nacosServer.getMetadata();
-            //header中的服务版本
-            String serName = serviceName.substring(serviceName.lastIndexOf("@") + 1);
-            String headerVersion = request.getHeader(serName);
-            //server中的服务版本
-            String serVersion = metadata.get("version");
-            if (StringUtils.hasLength(headerVersion) && StringUtils.hasLength(serVersion)) {
-                return headerVersion.equals(serVersion);
+            if ("true".equals(request.getHeader("greyType"))) {
+                String serviceName = nacosServer.getInstance().getServiceName();
+                //header中的服务版本
+                String serName = serviceName.substring(serviceName.lastIndexOf("@") + 1);
+                String headerVersion = request.getHeader(serName);
+                //server中的服务版本
+                String serVersion = metaMap.get("version");
+                if (StringUtils.hasLength(headerVersion) && StringUtils.hasLength(serVersion)) {
+                    return headerVersion.equals(serVersion);
+                }
+                return false;
+            } else {
+                String hasCoexistingVersionStr = metaMap.get("hasCoexistingVersionStr");
+                if (StringUtils.hasLength(hasCoexistingVersionStr) && Boolean.parseBoolean(hasCoexistingVersionStr)) {
+                    String maxVersion = metaMap.get("maxVersion");
+                    String version = metaMap.get("version");
+                    boolean isMatch = maxVersion.equals(version);
+                    //如果是灰度请求，则和正常请求的结果相反。
+                    return "true".equals(request.getHeader("isGreyRequest")) == isMatch;
+                }
             }
-            return false;
         }
         return true;
     }
